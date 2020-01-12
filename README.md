@@ -19,7 +19,7 @@ This should work on all Systems where pip is available. But you should consider 
 ### Installing
 
 #### Download way
-Just Download the fiels of this repository and start cal-sync.py with:
+Just Download the files of this repository and start cal-sync.py with:
 
 'python cal-sync.py'
 
