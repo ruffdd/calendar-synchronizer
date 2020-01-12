@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
-import os
-
 import caldav
 import icalendar
 import requests
 from caldav.elements import cdav, dav
 from datetime import datetime
 import settings
-import easywebdav
 
 
 
