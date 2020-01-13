@@ -5,11 +5,18 @@ import requests
 from caldav.elements import cdav, dav
 from datetime import datetime
 import settings
+import logging
+
+logging.basicConfig() 
+logging.getLogger().setLevel(logging.DEBUG)
+requests_log = logging.getLogger("requests.packages.urllib3")
+requests_log.setLevel(logging.DEBUG)
+requests_log.propagate = True
 
 
-
-def getCalendarIcs(url):
-    request = requests.get(url)
+def getCalendarIcs(calendar_settings):
+    #request = requests.get(calendar_settings.url,params={"DNT":"1","Accept-Encoding":"deflate,chunked","Connection":"close"},verify=False)
+    request = requests.head(calendar_settings.url)
     assert (request.status_code == 200)
     calendar = icalendar.Calendar.from_ical(request.content)
     return calendar
